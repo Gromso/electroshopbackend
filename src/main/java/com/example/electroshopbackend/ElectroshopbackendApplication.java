@@ -8,6 +8,7 @@ public class ElectroshopbackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ElectroshopbackendApplication.class, args);
+
 	}
 
 }
