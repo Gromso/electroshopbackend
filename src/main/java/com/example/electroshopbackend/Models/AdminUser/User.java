@@ -1,15 +1,13 @@
 package com.example.electroshopbackend.Models.AdminUser;
 
-
+import com.example.electroshopbackend.Models.AdminUserToken.AdminUserToken;
 import com.example.electroshopbackend.Models.Cart.Cart;
 import com.example.electroshopbackend.Models.Role.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -44,6 +42,10 @@ public class User implements UserDetails {
     @JsonManagedReference
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch= FetchType.LAZY)
     private Set<Cart> carts;
+
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch= FetchType.LAZY)
+    private Set<AdminUserToken> adminUserTokens;
 
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -111,9 +113,6 @@ public class User implements UserDetails {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }

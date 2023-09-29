@@ -28,9 +28,6 @@ public class Category {
 
     private String name;
 
-    @Column(name = "imagePath", nullable = false)
-    private String imagePath;
-
     @JsonManagedReference
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Article> articles;
