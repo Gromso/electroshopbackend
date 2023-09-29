@@ -3,7 +3,7 @@ package com.example.electroshopbackend.Util;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 
-public class KeyGeneratorUtility {
+public final class KeyGeneratorUtility {
 
     public static KeyPair generateRsaKey(){
         KeyPair keyPair;
