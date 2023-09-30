@@ -44,4 +44,5 @@ public class Cart {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", referencedColumnName = "user_id", nullable = false)
     private User user;
+
 }

@@ -16,7 +16,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "orders")
-public class Orders {
+public final class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
